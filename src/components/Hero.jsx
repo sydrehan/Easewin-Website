@@ -1,7 +1,7 @@
 // src/components/Hero.jsx
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PlayCircle } from 'lucide-react';
 
 const Hero = () => {
@@ -10,16 +10,28 @@ const Hero = () => {
   // Track scroll progress from top to bottom of Hero section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ['start start', 'end start'],
   });
 
   // Instantly scale image from 1 to 1.2 based on scroll (no spring)
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
+  // Handle responsive image for background
+  const [bgImage, setBgImage] = useState('/ease.png');
+
+  useEffect(() => {
+    const updateImage = () => {
+      setBgImage(window.innerWidth < 640 ? '/s.png' : '/ease.png');
+    };
+    updateImage(); // initial run
+    window.addEventListener('resize', updateImage);
+    return () => window.removeEventListener('resize', updateImage);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-6 overflow-hidden"
+      className="relative min-h-screen grid grid-cols-1 md:grid-cols-12 gap-4 items-center px-6 overflow-hidden pt-20"
     >
       {/* --- Background Image (scroll-zoom effect) --- */}
       <motion.div
@@ -29,22 +41,17 @@ const Hero = () => {
         animate={{ opacity: [0, 0.4, 0.9], x: 0 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
       >
-        {/* <div
-          className="relative h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('spider.png')" }}
-        ></div> */}
         <div
-  className="relative h-full w-full bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: "url('/ease.png')",
-    maskImage:
-      'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
-    WebkitMaskImage:
-      'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
-    filter: 'blur(1px) brightness(0.9)',
-  }}
-></div>
-
+          className="relative h-full w-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('${bgImage}')`,
+            maskImage:
+              'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+            filter: 'blur(1px) brightness(0.9)',
+          }}
+        ></div>
       </motion.div>
 
       {/* --- Foreground Text Content --- */}
