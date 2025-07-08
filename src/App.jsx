@@ -7,7 +7,7 @@ import Layout from './components/Layout';
 import HomePage from './Pages/HomePage';
 import GamesPage from './Pages/GamePage';
 import BlogPage from './Pages/BlogPage';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 import ScrollToAnchor from './components/ScrollToAnchor'; 
 
 function App() {
