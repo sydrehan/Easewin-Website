@@ -36,7 +36,10 @@ const Footer = () => {
           {/* Column 1: Brand & Socials */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
-              <Gamepad2 className="text-brand-purple" size={24} />
+              <img
+              src='/logo.png'
+              className='h-10 w-auto'
+              />
               <span className="text-xl font-bold font-display text-white">Easewin</span>
             </div>
             <p className="mt-4 text-light-gray max-w-xs">
