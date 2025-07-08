@@ -38,6 +38,9 @@ export default {
       animation: {
         'marquee': 'marquee 40s linear infinite',
         'flicker-in': 'flicker-in 0.8s linear forwards',
+         'pause-animation': {
+          'animation-play-state': 'paused',
+        },
       },
       keyframes: {
         marquee: {
@@ -68,5 +71,13 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.pause-animation': {
+          'animation-play-state': 'paused',
+        },
+      })
+    },
+  ],
 }

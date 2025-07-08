@@ -29,10 +29,22 @@ const Hero = () => {
         animate={{ opacity: [0, 0.4, 0.9], x: 0 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
       >
-        <div
+        {/* <div
           className="relative h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/spider.png')" }}
-        ></div>
+          style={{ backgroundImage: "url('spider.png')" }}
+        ></div> */}
+        <div
+  className="relative h-full w-full bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/ease.png')",
+    maskImage:
+      'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+    WebkitMaskImage:
+      'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+    filter: 'blur(1px) brightness(0.9)',
+  }}
+></div>
+
       </motion.div>
 
       {/* --- Foreground Text Content --- */}

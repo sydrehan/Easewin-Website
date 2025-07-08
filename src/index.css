@@ -12,3 +12,7 @@ body {
 html {
   scroll-behavior: smooth; /* <--- ADD THIS LINE */
 }
+/* Add this to the bottom of src/index.css */
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
