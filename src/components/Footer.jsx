@@ -2,7 +2,7 @@
 
 import { Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { Gamepad2 } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 // Reusable link components for clean code
 const FooterLink = ({ href = '#', children }) => (
   <a href={href} className="text-light-gray hover:text-white transition-colors duration-200">
@@ -57,7 +57,11 @@ const Footer = () => {
               <li><FooterLink href="#features">Features</FooterLink></li>
               <li><FooterLink href="#testimonials">Testimonials</FooterLink></li>
               <li><FooterLink href="#cta">Register</FooterLink></li>
-              <li><FooterLink href="#">Privacy Policy</FooterLink></li>
+              <li>
+  <Link to="/privacy-policy" className="text-light-gray hover:text-white transition-colors duration-200">
+    Privacy Policy
+  </Link>
+</li>
             </ul>
           </div>
 

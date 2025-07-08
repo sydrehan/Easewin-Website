@@ -19,11 +19,11 @@ const gameData = [
   },
   {
     id: 2,
-    title: 'Arachnid Assault',
-    image: '/spider.png', // Using your image from /public/spider.png
+    title: 'Word Hunt - Colorful puzzle',
+    image: '/wordhunt.webp', // Using your image from /public/spider.png
     tags: ['RPG', 'Sci-Fi', 'Multiplayer'],
-    description: 'In the abandoned halls of a top-secret lab, you are the experiment. Wield incredible arachnid powers to hunt, trap, and eliminate waves of armored soldiers. They came to study you; now, you are the predator.',
-    playStoreUrl: 'https://play.google.com/store/apps'
+    description: 'Word Hunt is a vibrant and fun word search game that challenges your brain and sharpens your vocabulary. Explore beautiful, colorful letter grids and find hidden words across categories. Whether you’re a casual gamer or a puzzle lover, Word Hunt is designed to entertain, relax, and train your brain – all at once!',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.easewin.wordhunt&hl=en'
   },
   {
     id: 3,

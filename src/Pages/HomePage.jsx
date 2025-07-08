@@ -1,24 +1,20 @@
-// src/pages/HomePage.jsx
+// src/Pages/HomePage.jsx - The NEW, simplified version
 
-// NOTE: You don't need to import Navbar or Footer here
+// We ONLY import the sections that are unique to the homepage
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import GamesPage from './GamePage';
-import BlogPage from './BlogPage';   // We will remove these two soon
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
-import About from '../components/About';
+
 const HomePage = () => {
   return (
-    <main>
+    // NO Navbar or Footer here! They are now in the Layout component.
+    <>
       <Hero />
-      {/* We will soon remove Games and Blog from the homepage */}
-      
       <Features />
-      <About/>
       <Testimonials />
       <CTA />
-    </main>
+    </>
   );
 };
 

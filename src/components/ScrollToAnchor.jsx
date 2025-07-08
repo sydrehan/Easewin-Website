@@ -1,4 +1,5 @@
 // src/components/ScrollToAnchor.jsx
+
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ function ScrollToAnchor() {
         }
       }
     } else {
-        window.scrollTo(0, 0); // Always scroll to top on new page
+        window.scrollTo(0, 0); // Always scroll to top on new pages
     }
   }, [location]);
 
